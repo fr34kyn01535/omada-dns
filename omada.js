@@ -185,7 +185,8 @@ class Omada {
         const localAnswers = {};
         for( let r of dhcpReservations ) {
             const names = [];
-            names.push( r.description );
+            if(r.description)
+                names.push( r.description );
             names.push( r.mac );
             if( r.clientName != r.mac )
                 names.push( r.clientName );
